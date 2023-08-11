@@ -1,7 +1,7 @@
 import cv2
 import sys
 
-img = cv2.imread("lena.jpg", 0)
+img = cv2.imread("data/lena.jpg",1)
 
 print(img)
 
