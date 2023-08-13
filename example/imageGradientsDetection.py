@@ -10,16 +10,17 @@ laplace = np.uint8(np.absolute(laplace))
 
 sobelX = cv2.Sobel(img, cv2.CV_64F, 1, 0)
 sobelY = cv2.Sobel(img, cv2.CV_64F, 0, 1)
+edges = cv2.Canny(img, 100, 200) ##best
 
 sobelX = np.uint8(np.absolute(sobelX))
 sobelY = np.uint8(np.absolute(sobelY))
 
-sobelCombined = cv2.bitwise_or(sobelX,sobelY) ##best
+sobelCombined = cv2.bitwise_or(sobelX,sobelY) ## second best
 
-titles = ["image", "laplace", "sobelX", "sobelY", "sobelCombined"]
-images = [img, laplace, sobelX, sobelY, sobelCombined]
+titles = ["image", "laplace", "sobelX", "sobelY", "sobelCombined", "Canny"]
+images = [img, laplace, sobelX, sobelY, sobelCombined, edges]
 
-for i in range(5):
+for i in range(6):
     plt.subplot(2, 3, i+1), plt.imshow(images[i], "gray")
     plt.title(titles[i])
     plt.xticks([]), plt.yticks([])
