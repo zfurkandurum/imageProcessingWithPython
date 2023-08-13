@@ -11,7 +11,7 @@ karnel = np.ones((5, 5), np.float32)/25
 dst = cv2.filter2D(img, -1, karnel)
 blur = cv2.blur(img, (5,5))
 gaussianBlur = cv2.GaussianBlur(img, (5, 5), 0)
-medianBlur = cv2.medianBlur(img, 5)
+medianBlur = cv2.medianBlur(img, 5) ## best
 bilateralFilter = cv2.bilateralFilter(img, 9, 75,75)
 
 titles = ["image", "2D Convolution", "blur", "gaussianBlur", "medianBlur", "bilateralFilter"]
